@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.xy.tools.hotelreservationservice.config.HotelConfig;
+import com.xy.tools.hotelreservationservice.exception.NumberOfRoomsExceededException;
 import com.xy.tools.hotelreservationservice.persistence.entity.Reservation;
 import com.xy.tools.hotelreservationservice.persistence.entity.Room;
 import com.xy.tools.hotelreservationservice.persistence.repository.ReservationRepository;
@@ -33,7 +34,7 @@ public class DataAccessService {
 			final String message = "Number of rooms limit exceeded! , please specify total rooms <= "
 					+ hotelConfig.getMaxRooms();
 			logger.error(message);
-			return false;
+			throw new NumberOfRoomsExceededException(message);
 		}
 		for (int i = 1; i <= totalRooms; i++) {
 			roomRepository.save(new Room(i));
