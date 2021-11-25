@@ -1,16 +1,18 @@
-# com.xy.tools.hotelreservation
+# com.xy.tools.hotelreservation (Spring boot rest microservice)
 
 ## Launching via STS/Eclipse
 
 1. Simply import project into STS/Eclipse as maven project
 2. Launch application as springboot 
-3. Console menu will appear, choose the desired options and proceed
+3: Access swagger-ui via browser http://localhost:8082/swagger-ui.html
+4: In order to observe in-memory database, check it on http://localhost:8082/h2-console , type database name as hotelreservation
 
 ## Launching via command line
 
 1. Navigate to the root directoy of your project
 2. Execute command mvn spring-boot:run	
-3. Console menu will apperar.
+3: Access swagger-ui via browser http://localhost:8082/swagger-ui.html
+4: In order to observe in-memory database, check it on http://localhost:8082/h2-console , type database name as hotelreservation
 
 ## Abstract View:
 
@@ -28,4 +30,7 @@
 ### Tests:
 1. TestReservationProcess.java represents all the examples test mentioned in the document	
 2. TestReservationProcessDatabaseSimulation.java provides the simulation scneario where data is read first from database and then reservation request was processed.
+
+### Tests via swagger-ui
+Access the swagger-ui and do the manual tests via directly calling end points
 		
